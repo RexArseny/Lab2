@@ -4,30 +4,15 @@ using namespace std;
 
 bool isInArea(double x, double y)
 {
-    if ((x <= 1) and (x >= 0) and (y <= 1) and (y >= -1))
-    {
+    if (((abs(x) * abs(y)) <= 1) and !((x >= -1) and (x < 0) and (y <= 1) and (y > 0)))
         return 1;
-    }
-    else if ((x >= -1) and (x <= 0) and (y <= 0) and (y >= -1))
-    {
-        return 1;
-    }
     else
-    {
         return 0;
-    }
 }
 
 double f(double x)
 {
-    if (x <= 3)
-    {
-        return (pow(x, 2) - 3 * x + 9);
-    }
-    else
-    {
-        return 1 / (pow(x, 3) + 6);
-    }
+    return x <= 3 ? (pow(x, 2) - 3 * x + 9) : 1 / (pow(x, 3) + 6);
 }
 
 int main()
